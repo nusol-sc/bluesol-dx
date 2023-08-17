@@ -1,4 +1,4 @@
-# Starting point
+# bluesol-dx
 
 [![build-ublue](https://github.com/nusol-sc/bluesol-dx/actions/workflows/build.yml/badge.svg)](https://github.com/nusol-sc/bluesol-dx/actions/workflows/build.yml)
 
