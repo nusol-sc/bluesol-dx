@@ -1,18 +1,18 @@
-title: Welcome to uBlue
+title: Welcome to Bluesol DX
 properties:
   mode: "run-on-change"
 screens:
   first-screen:
     source: yafti.screen.title
     values:
-      title: "Welcome to uBlue (Alpha)"
+      title: "Welcome to bluesol-dx (Alpha)"
       icon: "/path/to/icon"
       description: |
         This guided installer will help you get started with your new system.
   can-we-modify-your-flatpaks:
     source: yafti.screen.consent
     values:
-      title: Welcome, Traveler!
+      title: Welcome!
       condition:
         run: flatpak remotes --columns=name | grep fedora
       description: |
@@ -81,50 +81,74 @@ screens:
           description: System applications for all desktop environments.
           default: true
           packages:
+            - Cockpit Client: org.cockpit_project.CockpitClient
             - Deja Dup Backups: org.gnome.DejaDup
             - Fedora Media Writer: org.fedoraproject.MediaWriter
             - Flatseal (Permission Manager): com.github.tchx84.Flatseal
             - Font Downloader: org.gustavoperedo.FontDownloader
-            - Mozilla Firefox: org.mozilla.firefox
+            - Brave: com.brave.Browser
         Web Browsers:
           description: Additional browsers to complement or replace Firefox.
           default: false
           packages:
-            - Brave: com.brave.Browser
+            - Chromium: org.chromium.Chromium
             - Google Chrome: com.google.Chrome
             - Microsoft Edge: com.microsoft.Edge
-            - Opera: com.opera.Opera
-        Gaming:
-          description: "Rock and Stone!"
-          default: false
+            - Mozilla Firefox: org.mozilla.firefox
+        Basic Office:
+          description: Productivity and communication basics
+          default: true
           packages:
-            - Bottles: com.usebottles.bottles
-            - Discord: com.discordapp.Discord
-            - Heroic Games Launcher: com.heroicgameslauncher.hgl
-            - Steam: com.valvesoftware.Steam
-            - Gamescope (Utility): org.freedesktop.Platform.VulkanLayer.gamescope
-            - MangoHUD (Utility): org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
-            - SteamTinkerLaunch (Utility): com.valvesoftware.Steam.Utility.steamtinkerlaunch
-            - Proton Updater for Steam: net.davidotek.pupgui2
-        Office:
-          description: Boost your productivity.
-          default: false
-          packages:
+            - KeePassXC: org.keepassxc.KeePassXC
+            - Kotatogram: io.github.kotatogram
             - LibreOffice: org.libreoffice.LibreOffice
-            - OnlyOffice: org.onlyoffice.desktopeditors
+            - Nextcloud Desktop: com.nextcloud.desktopclient.nextcloud
             - Obsidian: md.obsidian.Obsidian
-            - Slack: com.slack.Slack
-            - Standard Notes: org.standardnotes.standardnotes
+            - Remmina: org.remmina.Remmina
+            - Teams: com.github.IsmaelMartinez.teams_for_linux
             - Thunderbird Email: org.mozilla.Thunderbird
-        Streaming:
-          description: Stream to the Internet.
+        Office Extras:
+          description: Additional productivity and communication tools
           default: false
           packages:
-            - OBS Studio: com.obsproject.Studio
-            - VkCapture for OBS: com.obsproject.Studio.OBSVkCapture
-            - Gstreamer for OBS: com.obsproject.Studio.Plugin.Gstreamer
-            - Gstreamer VAAPI for OBS: com.obsproject.Studio.Plugin.GStreamerVaapi
-            - Boatswain for Streamdeck: com.feaneron.Boatswain
+            - Amazon Workspaces: com.amazon.Workspaces
+            - Discord: com.discordapp.Discord
+            - Slack: com.slack.Slack
+            - OnlyOffice: org.onlyoffice.desktopeditors
+            - Standard Notes: org.standardnotes.standardnotes
+        Photos and Imaging:
+          description: Photography and imaging editing
+          default: false
+          packages:
+            - DarkTable: org.darktable.Darktable
+            - Gimp: org.gimp.GIMP
+        Development:
+          description: Development tools
+          default: false
+          packages:
+            - DataGrip: com.jetbrains.DataGrip
+            - K3X: com.github.inercia.k3x
+            - Open Lens: dev.k8slens.OpenLens
+            - Podman Desktop: io.podman_desktop.PodmanDesktop
+            - Pods: com.github.marhkb.Pods
+            - PyCharm Professional: com.jetbrains.PyCharm-Professional
+            - PyCharm Community: com.jetbrains.PyCharm-Community
+            - VS Codium: com.vscodium.codium
+            - VS Code: com.visualstudio.code
+            - VS Code (OSS): com.visualstudio.code-oss
+        Tools:
+          description: Additional tools you may want
+          default: false
+          packages:
+            - Barrier: com.github.debauchee.barrier
+            - Bottles: com.usebottles.bottles
+        Audio and Video:
+          description: Audio/Video applications
+          default: false
+          packages:
+            - Plex Desktop: tv.plex.PlexDesktop
+            - Plex HTPC: tv.plex.PlexHTPC
+            - Plexamp: com.plexamp.Plexamp
 
   final-screen:
     source: yafti.screen.title
